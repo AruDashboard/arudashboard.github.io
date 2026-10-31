@@ -21,6 +21,8 @@ const year = new Date().getFullYear();
     <meta name="description" content={description} />
     <link rel="icon" type="image/png" href={`${base}images/favicon.png`} />
     <title>{title}</title>
+    <meta name="google-site-verification" content="tXyJhIUjwgDkdY4scPFF1nBiVW9co3-HjowXazdoL7I" />
+    <meta name="msvalidate.01" content="900BFBEC9CA24BE1B56B696EF1CE3B2E" />
   </head>
   <body>
     <header class="banner">
@@ -49,5 +51,14 @@ const year = new Date().getFullYear();
         GitHub
       </a>
     </footer>
+    <script async src="https://googletagmanager.com" is:inline></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-QS24MSWVW1');
+    </script>
   </body>
 </html>
