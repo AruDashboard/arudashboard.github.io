@@ -1,0 +1,41 @@
+---
+interface Props {
+  caption?: string;
+  columns?: string[];
+  rows?: string[][];
+  emptyRows?: number;
+}
+
+const { caption, columns = [], rows = [], emptyRows = 20 } = Astro.props;
+
+const colCount = Math.max(columns.length, ...rows.map((r) => r.length), 1);
+const body: string[][] =
+  rows.length > 0
+    ? rows
+    : Array.from({ length: emptyRows }, () => Array.from({ length: colCount }, () => ''));
+const cell = (row: string[], i: number) => row[i] ?? '';
+---
+
+<div class="table-wrap">
+  <table class="sheet">
+    {caption && <caption>{caption}</caption>}
+    {columns.length > 0 && (
+      <thead>
+        <tr>
+          {columns.map((c) => (
+            <th>{c}</th>
+          ))}
+        </tr>
+      </thead>
+    )}
+    <tbody>
+      {body.map((row) => (
+        <tr>
+          {Array.from({ length: colCount }, (_, i) => (
+            <td>{cell(row, i)}</td>
+          ))}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { groups, type Card } from '../data/cards';
+
+const base = import.meta.env.BASE_URL;
+const resolve = (card: Card) => (card.internal ? `${base}${card.href}` : card.href);
+---
+
+<Layout title="阿如面板" description="各工具页面的入口汇总">
+  {groups.map((group) => (
+    <section class="group">
+      <h2 class="group-title">{group.title}</h2>
+      <div class="cards">
+        {group.cards.map((card) => (
+          <a
+            class="card"
+            href={resolve(card)}
+            target={card.internal ? undefined : '_blank'}
+            rel={card.internal ? undefined : 'noopener'}
+          >
+            <div class="card-head">
+              <h3>{card.title}</h3>
+              <span class="tag">{card.tag}</span>
+            </div>
+            <p>{card.description}</p>
+            <span class="go">{card.internal ? '打开页面 →' : '前往 ↗'}</span>
+          </a>
+        ))}
+      </div>
+    </section>
+  ))}
+</Layout>

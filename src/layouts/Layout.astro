@@ -1,0 +1,53 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  fill?: boolean;
+  showHome?: boolean;
+}
+
+const { title, description = '阿如看板', fill = false, showHome = false } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const year = new Date().getFullYear();
+---
+
+<!doctype html>
+<html lang="zh-CN" class={fill ? 'fill' : undefined}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/png" href={`${base}images/favicon.png`} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header class="banner">
+      <img src={`${base}images/favicon.png`} alt="Aru" />
+      <div class="title">
+        <h1>{title}</h1>
+        <p>{description}</p>
+      </div>
+      <div class="spacer"></div>
+      {showHome && (
+        <a class="home-link" href={base}>
+          ← 返回主页
+        </a>
+      )}
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="footer">
+      <span>Aru Dashboard · {year}</span>
+      <a
+        href="https://github.com/arudashboard/arudashboard.github.io"
+        target="_blank"
+        rel="noopener"
+      >
+        GitHub
+      </a>
+    </footer>
+  </body>
+</html>
