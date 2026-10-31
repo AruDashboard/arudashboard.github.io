@@ -37,8 +37,6 @@ a {
   text-decoration: none;
 }
 
-/* Full-height pages (e.g. the full-page tables): lock the viewport so the
-   content area fills exactly one screen and scrolls internally. */
 html.fill,
 html.fill body {
   height: 100%;
@@ -46,7 +44,6 @@ html.fill body {
   overflow: hidden;
 }
 
-/* ---------- Banner ---------- */
 .banner {
   flex: none;
   height: 68px;
@@ -90,14 +87,12 @@ html.fill body {
   color: var(--accent);
 }
 
-/* ---------- Main ---------- */
 main {
   flex: 1;
   min-height: 0;
   padding: 28px;
 }
 
-/* ---------- Card groups ---------- */
 .group {
   max-width: 1200px;
   margin: 0 auto;
@@ -115,7 +110,6 @@ main {
   padding-left: 10px;
 }
 
-/* ---------- Card grid ---------- */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -168,12 +162,33 @@ main {
   color: var(--accent);
 }
 
-/* ---------- Full-page table ---------- */
 .table-wrap {
   height: 100%;
   overflow: auto;
   border: 1px solid var(--line);
   border-radius: 14px;
+  background: var(--panel);
+  /* Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: #3d4655 transparent;
+}
+/* WebKit / Chromium / Edge */
+.table-wrap::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+.table-wrap::-webkit-scrollbar-track {
+  background: var(--panel);
+}
+.table-wrap::-webkit-scrollbar-thumb {
+  background: #30363d;
+  border: 3px solid var(--panel);
+  border-radius: 8px;
+}
+.table-wrap::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+.table-wrap::-webkit-scrollbar-corner {
   background: var(--panel);
 }
 table.sheet {
@@ -214,7 +229,6 @@ table.sheet td:empty::after {
   content: '\00a0';
 }
 
-/* ---------- Footer ---------- */
 .footer {
   display: flex;
   flex-wrap: wrap;

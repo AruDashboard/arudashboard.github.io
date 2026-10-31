@@ -1,0 +1,43 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TableSheet from '../components/TableSheet.astro';
+
+const caption = '一切献给琥珀王';
+const columns: string[] = ['代号1', '代号2', '代号3', '调用基石台词'];
+const rows: string[][] = [
+  ['琥珀', 'Obsidian', '', ''],
+  ['玛瑙', 'Agate', '', ''],
+  ['托帕', 'Topaz', '催讨黄玉', ''],
+  [
+    '舒俱',
+    'Sugilite',
+    '征敛舒俱',
+    '我来赦谕、我来征敛、我来称取。我许万民匍匐求得，予取予夺，尽纳膏血铸金冠。一切献给——琥珀王！',
+  ],
+  [
+    '砂金',
+    'Aventurine',
+    '诡弈砂金',
+    '我来押注、我来博弈、我来赢取。我任命运拨转轮盘，孤注一掷，遍历死地而后生。一切献给——琥珀王！',
+  ],
+  [
+    '真珠',
+    'Pearl',
+    '',
+    '我来鉴知、我来解析、我来落笔。我将天地列为织锦，画石点睛，日月星辰自然成。一切献给——琥珀王。',
+  ],
+  ['苍刚', 'Garnet', '', ''],
+  [
+    '翡翠',
+    'Jade',
+    '典贷翡翠',
+    '我来觐见、我来添酒、我来占有。我为甘露赐下鸩毒，春种秋收，静待枯果满枝头。一切献给——琥珀王。',
+  ],
+  ['龙晶', 'Draconite', '', ''],
+  ['欧泊', 'Opal', '', ''],
+];
+---
+
+<Layout title={caption} description="石心十人已知调用基石台词" fill showHome>
+  <TableSheet columns={columns} rows={rows} emptyRows={24} />
+</Layout>

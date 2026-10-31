@@ -52,30 +52,16 @@ export const groups: CardGroup[] = [
       },
     ],
   },
-  /*{
-    title: '预留页面',
+  {
+    title: '其它信息',
     cards: [
       {
-        title: '预留页面 1',
-        description: '待填充内容的空白表格页。',
-        href: 'blank-1/',
-        tag: '预留',
-        internal: true,
-      },
-      {
-        title: '预留页面 2',
-        description: '待填充内容的空白表格页。',
-        href: 'blank-2/',
-        tag: '预留',
-        internal: true,
-      },
-      {
-        title: '预留页面 3',
-        description: '待填充内容的空白表格页。',
-        href: 'blank-3/',
-        tag: '预留',
+        title: '一切献给琥珀王',
+        description: '石心十人已知调用基石台词',
+        href: 'ten-stonehearts/',
+        tag: '星穹铁道',
         internal: true,
       },
     ],
-  },*/
+  },
 ];
