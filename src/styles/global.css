@@ -208,7 +208,7 @@ table.sheet th,
 table.sheet td {
   border: 1px solid var(--line);
   padding: 10px 14px;
-  text-align: left;
+  text-align: center;
   vertical-align: top;
 }
 table.sheet thead th {

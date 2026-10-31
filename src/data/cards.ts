@@ -56,8 +56,15 @@ export const groups: CardGroup[] = [
     title: '其它信息',
     cards: [
       {
-        title: '一切献给琥珀王',
-        description: '石心十人已知调用基石台词',
+        title: '愚人众',
+        description: '执行官代号与本名',
+        href: 'fatui/',
+        tag: '原神',
+        internal: true,
+      },
+      {
+        title: '石心十人',
+        description: '调用基石台词',
         href: 'ten-stonehearts/',
         tag: '星穹铁道',
         internal: true,
