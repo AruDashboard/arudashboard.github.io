@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://arudashboard.github.io/sitemap-index.xml
