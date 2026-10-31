@@ -24,7 +24,7 @@ export const groups: CardGroup[] = [
       {
         title: '元素反应',
         description: '原神元素反应无向图图示。',
-        href: 'https://arudashboard.github.io/HoyoUpdateDate/',
+        href: 'https://arudashboard.github.io/ElementReaction/',
         tag: '原神',
       },
     ],
